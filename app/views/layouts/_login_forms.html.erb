@@ -43,6 +43,12 @@
                 <label for="user_password">Confirm password</label>
                 <![endif]-->
                 <%= f.password_field :password_confirmation, :id => 'signup_password_confirmation', :placeholder => 'confirm password' %>
+                <!--[if lt IE 9]>
+                <label>My Avatar</label>
+                <![endif]-->
+                <%= image_tag(@user.avatar_url) if @user.avatar? %>
+                <%= f.file_field :avatar, :id => 'signup_avatar', :placeholder => 'your avatar' %>
+                <%= f.hidden_field :avatar_cache %>
 
                 <div><%= f.submit "Sign up", :id => 'signup', :class => "btn btn-primary" %></div>
             <% end %>
