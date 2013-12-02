@@ -3,6 +3,7 @@ Website::Application.routes.draw do
 
   devise_for :users
   root :to => 'visitors#new'
+  get '/', :to => 'visitors#new'
   get '/contributors', :to => 'contributors#index'
   get '/404', :to => 'errors#not_found'
   get '/422', :to => 'errors#server_error'
