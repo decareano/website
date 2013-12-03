@@ -5,7 +5,7 @@ def path_to(page_name)
       root_path
     #when /the list of articles/
     #  articles_path
-    when /the homepage/
+    when /the contributorspage/
       contributors_path
 
     # Add more page name => path mappings here
