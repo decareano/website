@@ -184,9 +184,13 @@ When(/^I should see the (.*) link$/) do |link|
   page.should have_link link
 end
 Given(/^I click on "([^"]*)" link$/) do |link|
- # within ('#navLogin') do
-    #click_link link
-    click_link ("##{link}")
-  #end
+  within ('.navbar') do
+    find('a', :text => /\A#{link}\Z/).click
+  end
+
 
 end
+
+
+
+
